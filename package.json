@@ -1,0 +1,60 @@
+{
+  "name": "welcome-to-terra-cotta-warriors-museum",
+  "version": "1.0.0",
+  "description": "Introduction to the terra-cotta warriors museum",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server",
+    "build": "webpack",
+    "flow": "flow",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sea-ice/welcome-to-terra-cotta-warriors-museum.git"
+  },
+  "keywords": [
+    "the",
+    "terra-cotta",
+    "warriors",
+    "museum",
+    "Xi'an",
+    "React"
+  ],
+  "author": "Jack",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sea-ice/welcome-to-terra-cotta-warriors-museum/issues"
+  },
+  "homepage": "https://github.com/sea-ice/welcome-to-terra-cotta-warriors-museum#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "copy-webpack-plugin": "^4.5.1",
+    "css-loader": "^0.28.9",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.11",
+    "flow-bin": "^0.64.0",
+    "react-css-modules": "^4.7.2",
+    "redux-logger": "^3.0.6",
+    "style-loader": "^0.19.1",
+    "url-loader": "^1.0.1",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
+  },
+  "dependencies": {
+    "chalk": "^2.3.2",
+    "commander": "^2.15.1",
+    "prompts": "^0.1.8",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "^4.0.8",
+    "redux": "^3.7.2"
+  }
+}
