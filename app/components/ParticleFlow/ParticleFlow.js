@@ -18,8 +18,8 @@ class ParticleFlow extends Component {
       minr: 20,
       hspeed: 1, // 水平匀速
       particles: data,
-      miny: 200,
-      maxy: 400,
+      miny: 450,
+      maxy: 550,
       hwidth: 3000
     }
     let {hwidth} = this.options
@@ -77,7 +77,7 @@ class ParticleFlow extends Component {
     }
     setTimeout(() => {
       this.computeNewFrame()
-    }, 50)
+    }, 100)
   }
   render () {
     let particles = this.state.circles.map(

@@ -10,6 +10,11 @@ import No2 from './subpages/No2/No2'
 import No3 from './subpages/No3/No3'
 import Carriage from './subpages/Carriage/Carriage'
 import Park from './subpages/Park/Park'
+import Toilet from './subpages/extra/Toilet/Toilet'
+import Consult from './subpages/extra/Consult/Consult'
+import Eatting from './subpages/extra/Eatting/Eatting'
+
+import CustomLink from '../../components/CustomLink/CustomLink'
 
 class NavigationPage extends Component {
   constructor (props) {
@@ -38,6 +43,18 @@ class NavigationPage extends Component {
       path: '/scene/park',
       component: () => <Park />,
       title: () => <h2 className={this.props.styles.title}>骊山园</h2>
+    }, {
+      path: '/scene/toilet',
+      component: () => <Toilet />,
+      title: () => <h2 className={this.props.styles.title}>洗手间</h2>
+    }, {
+      path: '/scene/consult',
+      component: () => <Consult />,
+      title: () => <h2 className={this.props.styles.title}>咨询</h2>
+    }, {
+      path: '/scene/eat',
+      component: () => <Eatting />,
+      title: () => <h2 className={this.props.styles.title}>美食</h2>
     }]
   }
   render () {
@@ -51,62 +68,92 @@ class NavigationPage extends Component {
                 exact
                 key={index}
                 path={route.path}
-                component={route.title} />
-              )}
+                component={route.title}
+              />)}
               <Link to="/" styleName="close"></Link>
             </div>
             {this.routes.map((route, index) => <Route
               exact
               key={index}
               path={route.path}
-              component={route.component} />
-            )}
+              component={route.component}
+            />)}
             <footer styleName="footer">
               <div styleName="large-button-wrapper">
-                <Link
+                <CustomLink
                   to="/scene/"
-                  styleName="large-button"
-                  style={{backgroundImage: `url(../../assets/icons/1-1.png)`}}
-                ></Link>
-                <Link
+                  className={this.props.styles['large-button']}
+                  normal="../../assets/icons/1-1.png"
+                  active="../../assets/icons/1-1-2.png"
+                />
+                <CustomLink
                   to="/scene/no.1"
-                  styleName="large-button"
-                  style={{backgroundImage: `url(../../assets/icons/1-2.png)`}}
-                ></Link>
-                <Link
+                  className={this.props.styles['large-button']}
+                  normal="../../assets/icons/1-2.png"
+                  active="../../assets/icons/1-2-2.png"
+                />
+                <CustomLink
                   to="/scene/no.2"
-                  styleName="large-button"
-                  style={{backgroundImage: `url(../../assets/icons/1-3.png)`}}
-                ></Link>
-                <Link
+                  className={this.props.styles['large-button']}
+                  normal="../../assets/icons/1-3.png"
+                  active="../../assets/icons/1-3-2.png"
+                />
+                <CustomLink
                   to="/scene/no.3"
-                  styleName="large-button"
-                  style={{backgroundImage: `url(../../assets/icons/1-4.png)`}}
-                ></Link>
-                <Link
+                  className={this.props.styles['large-button']}
+                  normal="../../assets/icons/1-4.png"
+                  active="../../assets/icons/1-4-2.png"
+                />
+                <CustomLink
                   to="/scene/carriage"
-                  styleName="large-button"
-                  style={{backgroundImage: `url(../../assets/icons/1-5.png)`}}
-                ></Link>
-                <Link
+                  className={this.props.styles['large-button']}
+                  normal="../../assets/icons/1-5.png"
+                  active="../../assets/icons/1-5-2.png"
+                />
+                <CustomLink
                   to="/scene/park"
-                  styleName="large-button"
-                  style={{backgroundImage: `url(../../assets/icons/1-6.png)`}}
-                ></Link>
+                  className={this.props.styles['large-button']}
+                  normal='../../assets/icons/1-6.png'
+                  active='../../assets/icons/1-6-2.png'
+                />
               </div>
               <div styleName="small-button-wrapper">
-                <Link to="" styleName="small-button"
-                style={{backgroundImage: `url(../../assets/icons/2-1.png)`}}></Link>
-                <Link to="" styleName="small-button"
-                style={{backgroundImage: `url(../../assets/icons/2-2.png)`}}></Link>
-                <Link to="" styleName="small-button"
-                style={{backgroundImage: `url(../../assets/icons/2-3.png)`}}></Link>
-                <Link to="" styleName="small-button"
-                style={{backgroundImage: `url(../../assets/icons/2-4.png)`}}></Link>
-                <Link to="" styleName="small-button"
-                style={{backgroundImage: `url(../../assets/icons/2-5.png)`}}></Link>
-                <Link to="" styleName="small-button"
-                style={{backgroundImage: `url(../../assets/icons/2-6.png)`}}></Link>
+                <CustomLink
+                  to="/scene/toilet"
+                  className={this.props.styles['small-button']}
+                  normal="../../assets/icons/2-1.png"
+                  active="../../assets/icons/2-1-2.png"
+                />
+                <CustomLink
+                  to="/scene/consult"
+                  className={this.props.styles['small-button']}
+                  normal="../../assets/icons/2-2.png"
+                  active="../../assets/icons/2-2-2.png"
+                />
+                <CustomLink
+                  to="/scene/eat"
+                  className={this.props.styles['small-button']}
+                  normal="../../assets/icons/2-3.png"
+                  active="../../assets/icons/2-3-2.png"
+                />
+                <CustomLink
+                  to="/scene"
+                  className={this.props.styles['small-button']}
+                  normal="../../assets/icons/2-4.png"
+                  active="../../assets/icons/2-4-2.png"
+                />
+                <CustomLink
+                  to="/scene"
+                  className={this.props.styles['small-button']}
+                  normal="../../assets/icons/2-5.png"
+                  active="../../assets/icons/2-5-2.png"
+                />
+                <CustomLink
+                  to="/scene"
+                  className={this.props.styles['small-button']}
+                  normal="../../assets/icons/2-6.png"
+                  active="../../assets/icons/2-6-2.png"
+                />
               </div>
             </footer>
           </div>

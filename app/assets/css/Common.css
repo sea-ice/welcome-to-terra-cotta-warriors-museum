@@ -46,7 +46,7 @@
   display: block;
   width: 50px;
   height: 50px;
-  background-image: url(../../assets/icons/close.svg);
+  background-image: url(../../assets/icons/x-01.png);
   background-size: contain;
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -56,6 +56,7 @@
 .main {
   width: 100%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   height: 72.826%;
 }
@@ -67,9 +68,19 @@
   height: 100%;
 }
 
-.image {
+.object-image {
   width: 300px;
   height: 300px;
+}
+
+.cover-image {
+  width: 95%;
+}
+
+.three-dimension-render {
+  display: block;
+  width: 58%;
+  height: 100%;
 }
 
 .normal-image-wrapper {
@@ -101,7 +112,7 @@
 }
 
 .section {
-  margin: 40px 0 20px;
+  margin: 30px 0 20px;
 }
 
 .section-title {
@@ -117,6 +128,60 @@
   line-height: 40px;
   margin: 0;
   margin-top: 10px;
+}
+
+.row-images {
+  padding: 0;
+  margin: 0;
+  margin-top: 20px;
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.row-image-item {
+  display: inline-block;
+  height: 120px;
+  vertical-align: top;
+}
+
+.row-image-item:not(:first-child) {
+  margin-left: 10px;
+}
+
+.extra-image {
+  height: 100%;
+  vertical-align: top;
+}
+
+
+.button-wrapper {
+  width: 100%;
+  padding-top: 20px;
+}
+
+.recommend {
+  display: block;
+  width: 64.3836%;
+  padding: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  margin: 20px auto 0;
+}
+
+.recommend:before {
+  content: '';
+  display: block;
+  padding-top: 34.188%;
+}
+
+.recommend-one {
+  composes: recommend;
+}
+
+.recommend-two {
+  composes: recommend;
 }
 
 /* 底部footer样式 */

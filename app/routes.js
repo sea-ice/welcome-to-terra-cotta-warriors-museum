@@ -14,7 +14,7 @@ let routes = (
     <Route exact path='/object/:id' component={ObjectDetails} />
     <Route exact path='/objects' component={ObjectsPage} />
     <Route exact path='/baike' component={BaikePage} />
-    <Route exact path='/scene' component={NavigationPage} />
+    <Route path='/scene' component={NavigationPage} />
     <Route exact path='/games' component={GamesPage} />
   </Switch>
 )

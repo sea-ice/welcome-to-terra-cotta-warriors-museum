@@ -30,7 +30,7 @@ class ObjectDetails extends Component {
               <div
                 styleName="normal-image-wrapper"
               >
-                <img styleName="image" src={`/assets/images/图片资源/首页文物小图合集300/${id}.png`} />
+                <img styleName="object-image" src={`/assets/images/图片资源/首页文物小图合集300/${id}.png`} />
               </div>
               <div styleName="normal-introduction">
                 <div styleName="section">

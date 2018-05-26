@@ -52,5 +52,8 @@ module.exports = {
       from: './app/assets',
       to: path.resolve(__dirname, './build/assets')
     }])
-  ]
+  ],
+  externals: {
+    three: 'THREE'
+  }
 }
