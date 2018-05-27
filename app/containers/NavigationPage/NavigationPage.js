@@ -5,14 +5,14 @@ import {Route, Link} from 'react-router-dom'
 import data from '../../assets/json/data'
 import styles from '../../assets/css/Common.css'
 import General from './subpages/General/General'
-import No1 from './subpages/No1/No1'
-import No2 from './subpages/No2/No2'
-import No3 from './subpages/No3/No3'
-import Carriage from './subpages/Carriage/Carriage'
-import Park from './subpages/Park/Park'
-import Toilet from './subpages/extra/Toilet/Toilet'
-import Consult from './subpages/extra/Consult/Consult'
-import Eatting from './subpages/extra/Eatting/Eatting'
+import LoadableNo1 from './subpages/No1/LoadableNo1'
+import LoadableNo2 from './subpages/No2/LoadableNo2'
+import LoadableNo3 from './subpages/No3/LoadableNo3'
+import LoadableCarriage from './subpages/Carriage/LoadableCarriage'
+import LoadablePark from './subpages/Park/LoadablePark'
+import LoadableToilet from './subpages/extra/Toilet/LoadableToilet'
+import LoadableConsult from './subpages/extra/Consult/LoadableConsult'
+import LoadableEatting from './subpages/extra/Eatting/LoadableEatting'
 
 import CustomLink from '../../components/CustomLink/CustomLink'
 
@@ -25,35 +25,35 @@ class NavigationPage extends Component {
       title: () => <h2 className={this.props.styles.title}>全景导览</h2>
     }, {
       path: '/scene/no.1',
-      component: () => <No1 />,
+      component: () => <LoadableNo1 />,
       title: () => <h2 className={this.props.styles.title}>兵马俑一号坑</h2>
     }, {
       path: '/scene/no.2',
-      component: () => <No2 />,
+      component: () => <LoadableNo2 />,
       title: () => <h2 className={this.props.styles.title}>兵马俑二号坑</h2>
     }, {
       path: '/scene/no.3',
-      component: () => <No3 />,
+      component: () => <LoadableNo3 />,
       title: () => <h2 className={this.props.styles.title}>兵马俑三号坑</h2>
     }, {
       path: '/scene/carriage',
-      component: () => <Carriage />,
+      component: () => <LoadableCarriage />,
       title: () => <h2 className={this.props.styles.title}>铜车马展厅</h2>
     }, {
       path: '/scene/park',
-      component: () => <Park />,
+      component: () => <LoadablePark />,
       title: () => <h2 className={this.props.styles.title}>骊山园</h2>
     }, {
       path: '/scene/toilet',
-      component: () => <Toilet />,
+      component: () => <LoadableToilet />,
       title: () => <h2 className={this.props.styles.title}>洗手间</h2>
     }, {
       path: '/scene/consult',
-      component: () => <Consult />,
+      component: () => <LoadableConsult />,
       title: () => <h2 className={this.props.styles.title}>咨询</h2>
     }, {
       path: '/scene/eat',
-      component: () => <Eatting />,
+      component: () => <LoadableEatting />,
       title: () => <h2 className={this.props.styles.title}>美食</h2>
     }]
   }

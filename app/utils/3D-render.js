@@ -9,12 +9,12 @@ export default function (opt) {
 
 function init ({ele, mtlPath, objPath}) {
   let width = document.documentElement.clientWidth || document.body.clientWidth
-  let height = width / 1.7777778 * 0.62037
+  let height = width / 1.7777778 * 0.61
 
   renderer = new THREE.WebGLRenderer()
   renderer.setSize(ele.clientWidth, height)
-  renderer.setClearColor(0xffffff)
-  renderer.setClearAlpha(.4)
+  renderer.setClearColor(0x409d9b, .4)
+  console.log(renderer.getClearAlpha())
   ele.appendChild(renderer.domElement)
 
   scene = new THREE.Scene()
@@ -22,10 +22,15 @@ function init ({ele, mtlPath, objPath}) {
   camera.position.set(1965.91, 1432.44, 1099.14)
   camera.lookAt(new THREE.Vector3(0, 0, 0))
 
-  let light = new THREE.PointLight(0xffffff)
-  light.position.set(0, 2000, 0)
-  light.castShadow = true
-  scene.add(light)
+  let topLight = new THREE.PointLight(0xffffff)
+  topLight.position.set(0, 2000, 0)
+  topLight.castShadow = true
+  scene.add(topLight)
+
+  let bottomLight = new THREE.PointLight(0xffffff)
+  bottomLight.position.set(0, -2000, 0)
+  bottomLight.castShadow = true
+  scene.add(bottomLight)
 
   let mtlLoader = new THREE.MTLLoader()
   mtlLoader.load(mtlPath, mtl => {

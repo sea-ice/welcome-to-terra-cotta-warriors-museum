@@ -18,7 +18,7 @@ class ParticleFlow extends Component {
       minr: 20,
       hspeed: 1, // 水平匀速
       particles: data,
-      miny: 450,
+      miny: 350,
       maxy: 550,
       hwidth: 3000
     }

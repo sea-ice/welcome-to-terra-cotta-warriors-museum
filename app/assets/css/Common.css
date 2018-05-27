@@ -1,4 +1,36 @@
 /* 页面布局样式 */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  line-height: 40px;
+  font-size: 28px;
+  color: #ccc;
+}
+
+.loading-icon {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-image: url(../icons/loading.svg);
+  margin-right: 20px;
+  animation: loading .5s linear infinite;
+}
+
+@keyframes loading {
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
 .container {
   position: relative;
   height: 100%;
@@ -29,7 +61,7 @@
 .header {
   display: flex;
   justify-content: space-between;
-  height: 13.043%;
+  height: 14.043%;
   align-items: center;
 }
 
@@ -58,7 +90,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 72.826%;
+  height: 71.826%;
 }
 
 .image-wrapper {
