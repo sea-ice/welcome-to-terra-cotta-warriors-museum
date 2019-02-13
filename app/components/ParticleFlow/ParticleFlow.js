@@ -6,6 +6,9 @@ import {computeXPosRange} from '../../utils'
 import Particle from '../Particle/Particle'
 import styles from './ParticleFlow.css'
 
+/**
+ * canvas粒子碰撞实例：http://wow.techbrood.com/fiddle/31111
+ */
 class ParticleFlow extends Component {
   state={}
   constructor (props) {

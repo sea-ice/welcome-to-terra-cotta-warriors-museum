@@ -4,14 +4,14 @@ function getRandomInRange (min, max) {
 
 function initializeParticles (options) {
   let circles = [],
-      {particles, minx, maxx, miny, maxy, minr, maxr, minspacing} = options
+    { particles, minx, maxx, miny, maxy, minr, maxr, minspacing } = options
   for (let i = 0, len = particles.length; i < len; i++) {
     while (true) {
       let collided = false
       let c= {
         id: particles[i].id,
-        nx: getRandomInRange(minx, maxx),
-        ny: getRandomInRange(miny, maxy),
+        x: getRandomInRange(minx, maxx),
+        y: getRandomInRange(miny, maxy),
         dy: getRandomInRange(0, 1) ? 1 : -1
       }
       if (particles[i].navigation) {
@@ -23,6 +23,7 @@ function initializeParticles (options) {
         c.url = `/object/${c.id}`
         c.r = getRandomInRange(minr, maxr)
       }
+
       for (let circle of circles) {
         if (isCollided(circle, c, minspacing)) {
           collided = true
@@ -30,8 +31,6 @@ function initializeParticles (options) {
         }
       }
       if (!collided) {
-        c.x = c.nx
-        c.y = c.ny
         circles.push(c)
         break
       }
@@ -40,16 +39,21 @@ function initializeParticles (options) {
   return circles
 }
 
-function computeDistanceBetweenCenters (p1, p2) {
-  return Math.ceil(
+function computeDistanceBetweenCenters(p1, p2, newProp) {
+  newProp = newProp ? 'n' : ''
+  return Math.floor(
     Math.sqrt(
-      Math.pow(p1.nx - p2.nx, 2) + Math.pow(p1.ny - p2.ny, 2)
+      Math.pow(
+        p1[`${newProp}x`] - p2[`${newProp}x`], 2
+      ) + Math.pow(
+        p1[`${newProp}y`] - p2[`${newProp}y`], 2
+      )
     )
   )
 }
 
-function isCollided (c1, c2, spacing) {
-  return computeDistanceBetweenCenters(c1, c2) <= (c1.r + c2.r + spacing)
+function isCollided(c1, c2, spacing, newProp) {
+  return computeDistanceBetweenCenters(c1, c2, newProp) <= (c1.r + c2.r + spacing)
 }
 
 

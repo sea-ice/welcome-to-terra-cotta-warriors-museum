@@ -21,36 +21,35 @@ function computeNewFrame () {
     if (nx >= maxx) nx = minx
 
     ny = Math.max(Math.min(ny, maxy), miny)
-    if (ny >= maxy || ny <= miny) c.dy = c.dy === -1 ? 1 : -1
+    if (ny === maxy || ny === miny) c.dy = c.dy === -1 ? 1 : -1
     return Object.assign(c, {
-      nx, ny
+      nx, ny,
+      collided: false
     })
   })
-  let collided = false,
-      collidedCircles = new Set()
+  let collidedCircles = []
   for (let targetCircle of newCircles) {
     for (let circle of newCircles) {
       if (circle !== targetCircle) {
-        if (isCollided(circle, targetCircle, 0)) {
-          collided = true
-          collidedCircles.add(circle)
-          collidedCircles.add(targetCircle)
+        if (
+          !isCollided(circle, targetCircle, 0) &&
+          isCollided(circle, targetCircle, 0, true)
+        ) {
+          circle.collided = targetCircle.collided = true
+          collidedCircles.push([circle, targetCircle])
         }
       }
     }
   }
-  if (collided) {
-    for (let cc of collidedCircles) {
-      cc.dy = (cc.dy === -1 ? 1 : -1)
-      cc.y = cc.y + cc.dy
-    }
-  } else {
-    for (let c of newCircles) {
+  for (let c of newCircles) {
+    if (c.collided) {
+      c.dy = (c.dy === -1 ? 1 : -1)
+    } else {
       c.x = c.nx
       c.y = c.ny
     }
-    notifyCircles(newCircles)
   }
+  notifyCircles(newCircles)
   setTimeout(() => {
     computeNewFrame()
   }, 50)
